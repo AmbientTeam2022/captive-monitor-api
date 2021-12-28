@@ -1,0 +1,30 @@
+{
+  "name": "captive-monitor-api",
+  "version": "1.0.0",
+  "description": "API para la comunicación entre Arduino y la App de CaptiveMonitor",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "setdb": "node src/data.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grupo-2021-CaptiveMonitor/CaptiveMonitorAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grupo-2021-CaptiveMonitor/CaptiveMonitorAPI/issues"
+  },
+  "homepage": "https://github.com/Grupo-2021-CaptiveMonitor/CaptiveMonitorAPI#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-jwt": "^6.1.0",
+    "mongoose": "^6.1.3"
+  }
+}
