@@ -17,8 +17,8 @@ mongoose.connect(DB_URL)
 
 var app = express();
 
-app.use(express.json());
 app.use('/api/', apiRouter);
+app.use(express.json());
 app.all('*', function(req, res) {
   res.status(404).send('No encontrado.');
 })
