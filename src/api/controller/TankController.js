@@ -71,6 +71,8 @@ exports.saveTank = function (req, res) {
     
     if (tank !== null) {
       res.json(tank);
+      console.log(req.body);
+      console.log(updateData);
     } else {
       res.status(404).send('No se encontró el ambiente.');
     }
