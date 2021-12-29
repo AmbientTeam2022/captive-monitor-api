@@ -23,14 +23,14 @@ app.all('*', function(req, res) {
   res.status(404).send('No encontrado.');
 })
 
-app.listen(APP_PORT);
+var server = app.listen(APP_PORT);
 
 console.log(`API disponible en el puerto ${APP_PORT}`);
 
 function shutDownApp() {
   console.info("Closing server...");
 
-  app.close(() => {
+  server.close(() => {
      console.info("Server closed.");
      mongoose.connection.close();
      process.exit(0); // if required
