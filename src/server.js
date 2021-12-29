@@ -26,3 +26,17 @@ app.all('*', function(req, res) {
 app.listen(APP_PORT);
 
 console.log(`API disponible en el puerto ${APP_PORT}`);
+
+function shutDownApp() {
+  console.info("Closing server...");
+
+  app.close(() => {
+     console.info("Server closed.");
+     mongoose.connection.close();
+     process.exit(0); // if required
+  });
+}
+
+process.on("SIGINT", shutDownApp);
+process.on("SIGTERM", shutDownApp);
+process.on("SIGHUP", shutDownApp);
