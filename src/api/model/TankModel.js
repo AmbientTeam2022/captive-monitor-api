@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var TankSchema = new Schema({
   uuid: String,
-  name: String,
+  name: {type: String, default: 'Nuevo ambiente'},
   iconId: Number,
   actionCache: String,
   state: {
