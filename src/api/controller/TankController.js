@@ -55,3 +55,22 @@ exports.updateTank = function (req, res) {
     }
   });
 };
+
+exports.saveTank = function (req, res) {
+  var data = {
+    uuid: req.body.uuid,
+    name: req.body.name,
+    iconId: req.body.iconId,
+    params: req.body.params
+  };
+
+  Tank.create(data, (err, tank) => {
+    if (err) res.send(err);
+    
+    if (tank !== null) {
+      res.json(tank);
+    } else {
+      res.status(404).send('No se encontró el ambiente.');
+    }
+  });
+};

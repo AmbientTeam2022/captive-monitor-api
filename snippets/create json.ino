@@ -1,6 +1,6 @@
 // Código Arduino
 
-DynamicJsonDocument doc(2048);
+DynamicJsonDocument doc(192);
 doc["uuid"] = "12345";
 
 JsonObject state = doc.createNestedObject("state");
