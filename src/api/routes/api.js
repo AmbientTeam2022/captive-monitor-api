@@ -11,4 +11,7 @@ router.post("/save", TankController.saveTank);
 //Desde arduino
 router.post("/update/:tankId", TankController.updateTank);
 
+//Debug
+router.get("/debug/list", TankController.debugList);
+
 module.exports = router;

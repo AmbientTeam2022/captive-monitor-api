@@ -78,3 +78,14 @@ exports.saveTank = function (req, res) {
     }
   });
 };
+
+exports.debugList = function (req, res) {
+  console.log('listTanks');
+  Tank.find({}).then(
+    (tanks) => {
+      res.json(tanks);
+    },
+    (err) => {
+      res.send(err);
+    });
+};
