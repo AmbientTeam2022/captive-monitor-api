@@ -45,7 +45,7 @@ exports.updateTank = function (req, res) {
     state: req.body.state
   };
 
-  Tank.findOneAndUpdate({ uuid: tankId }, updateData, (err, tank) => {
+  Tank.findOneAndUpdate({ uuid: tankId }, updateData, {upsert: true}, (err, tank) => {
     if (err) res.send(err);
     
     if (tank !== null) {
