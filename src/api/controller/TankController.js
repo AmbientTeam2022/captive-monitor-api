@@ -66,7 +66,7 @@ exports.saveTank = function (req, res) {
     params: req.body.params
   };
 
-  Tank.findOneAndUpdate({ uuid: tankId }, data, {upsert: true}, (err, tank) => {
+  Tank.findOneAndUpdate({ uuid: req.body.uuid }, data, {upsert: true}, (err, tank) => {
     if (err) res.send(err);
     
     if (tank !== null) {
